@@ -113,6 +113,11 @@ class ListUserMessages(generics.ListCreateAPIView):
         username = self.kwargs['username']
         try:
             to_user = ApiUser.objects.get(username_lower=username.lower())
+
+            # This line solves an issue where sometimes the data is a python dict
+            # and sometimes it is an immutable queryset. -cas
+            request.data._mutable = True
+
             request.data['to_user'] = to_user.id
             return self.create(request, *args, **kwargs)
         except ApiUser.DoesNotExist:
