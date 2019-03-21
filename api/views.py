@@ -26,7 +26,7 @@ class MessageDetail(generics.RetrieveUpdateDestroyAPIView):
 
 class MessageBatchOperations(generics.UpdateAPIView):
     """Endpoint messages/batch/
-
+    PATCH delete several messages or mark as read
     """
     serializer_class = MessageSerializer
 
@@ -78,7 +78,6 @@ class ListUserMessages(generics.ListCreateAPIView):
     """Endpoint messages/<username>/
     GET messages marked to username
     POST new message to username
-    PATCH
     """
     serializer_class = MessageSerializer
 
@@ -125,6 +124,10 @@ class ListUserMessages(generics.ListCreateAPIView):
 
 
 class ListCreateApiUsers(generics.ListCreateAPIView):
+    """Endpoint users/
+    GET list all users
+    POST create new user
+    """
     serializer_class = ApiUserSerializer
     queryset = ApiUser.objects.all()
 
