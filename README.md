@@ -136,7 +136,7 @@ This usage differs from marking as read by replacing the "action" value with "de
 Deleting is irreversible. If you have been following along and are ready to continue deleting the sample messages, here is the CURL command:
 
 ```
-curl -X PATCH -d action=mark_as_read -d message_ids="1,2" http://127.0.0.1:8000/api/v1/messages/batch/
+curl -X PATCH -d action=delete -d message_ids="1,2" http://127.0.0.1:8000/api/v1/messages/batch/
 ```
 
 ### View or delete single message
