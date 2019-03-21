@@ -150,6 +150,13 @@ To delete the message, send a **DELETE** request
 No body or URL parameters are used for this endpoint.
 
 
+## Testing
+
+```
+python manage.py test
+```
+
+
 ## Endpoint Summary
 
 
